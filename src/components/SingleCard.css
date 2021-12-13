@@ -26,3 +26,6 @@
   transform: rotateY(90deg);
   transition-delay: 0s;
 }
+.flipped {
+  pointer-events: none;
+}

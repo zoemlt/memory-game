@@ -20,9 +20,11 @@ function App() {
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
-      .sort(() => Math.random() - 0.5)
+      .sort(() => Math.random() - 0.5) // change to fisher-yates
       .map(card => ({...card, id: Math.random()}))
 
+      setFirstCard(null)
+      setSecondCard(null)
       setCards(shuffledCards)
       setTurns(0)
   }
@@ -58,6 +60,11 @@ function App() {
     setDisabled(false)
   }
 
+  useEffect(() => {
+    shuffleCards()
+  }, [])
+
+
   return (
     <div className="App">
       <h1>Magic Match</h1>
@@ -76,6 +83,7 @@ function App() {
             />
         ))}
       </div>
+      <p>Turns: {turns}</p>
     </div>
   );
 }
