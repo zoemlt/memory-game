@@ -1,3 +1,7 @@
+# Next steps
+- Tell user when they have won
+- Have a "win" count
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
